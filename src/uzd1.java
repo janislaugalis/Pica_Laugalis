@@ -28,6 +28,23 @@ public class uzd1 {
 		}
 		JOptionPane.showMessageDialog(null, masivsVirkne);
 	}
+	
+	
+	static void flip(int arr[], int i){
+        int temp, start = 0;
+        while (start < i)
+        {
+            temp = arr[start];
+            arr[start] = arr[i];
+            arr[i] = temp;
+            start++;
+            i--;
+        }
+    }
+	
+	
+	
+	
 
 	public static void main(String[] args) {
 		int izvele;
