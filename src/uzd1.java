@@ -42,7 +42,13 @@ public class uzd1 {
         }
     }
 	
-	
+	  static int findMax(int arr[], int n){
+	        int mi, i;
+	        for (mi = 0, i = 0; i < n; ++i)
+	            if (arr[i] > arr[mi])
+	                mi = i;
+	        return mi;
+	    }
 	
 	
 
