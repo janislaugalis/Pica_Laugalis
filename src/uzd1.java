@@ -158,7 +158,7 @@ public class uzd1 {
 				JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
 			break;
 			}
-		}while(izvele!=0);
+		}while(izvele!=0); // Beigas
 	}
 }
 
