@@ -82,6 +82,43 @@ public class uzd1 {
 			JOptionPane.showMessageDialog(null, "Masīvs sakārtots augoši!");
 			return masivs;
 	    }
+	    
+
+		public static void saglabat(int[][] masivs) {
+			try {
+				FileWriter fw = new FileWriter("Laugalis.txt");
+				PrintWriter raksta = new PrintWriter(fw);
+				for(int i=0; i<masivs.length; i++) {
+					for(int j=0; j<masivs[i].length; j++) {
+						raksta.print(masivs[i][j]+" \t");
+					}
+					raksta.println();
+				}
+				JOptionPane.showMessageDialog(null, "Ierakstīts failā - `Laugalis.txt`");
+				raksta.close();
+			}catch(Exception e) {
+				JOptionPane.showMessageDialog(null, "Kļūme ierakstot failā!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+		
+		public static void nolasit(int[][] masivs) {
+		        try{
+		        	String masivsVirkne="";
+					FileReader fails = new FileReader("Laugalis.txt");
+		            Scanner myReader = new Scanner(fails);
+		            while (myReader.hasNextLine()) {
+		              String data = myReader.nextLine();
+		              masivsVirkne=masivsVirkne+data+"\n";
+		            }
+		            myReader.close();
+		            JOptionPane.showMessageDialog(null, masivsVirkne);
+		        }
+		        catch (IOException errorMessage){
+		            JOptionPane.showMessageDialog(null, "Failu nevar atrast!");
+		            System.out.println(errorMessage.getMessage());
+		            System.out.printf("Failu nevar atrast.\n\n");
+		        }
+		}
 	
 	
 
