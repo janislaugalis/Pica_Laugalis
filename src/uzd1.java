@@ -18,7 +18,16 @@ public class uzd1 {
 		JOptionPane.showMessageDialog(null, "Izveidots masīvs = [-10;10]");
 		return masivs;
 	}
-	
+	public static void izvadit(int[][] masivs) {
+		String masivsVirkne="";
+		for(int i=0; i<masivs.length; i++) {
+			for(int j=0; j<masivs[i].length; j++) {
+				masivsVirkne = masivsVirkne+masivs[i][j]+" \t";
+			}
+			masivsVirkne = masivsVirkne+"\n";
+		}
+		JOptionPane.showMessageDialog(null, masivsVirkne);
+	}
 
 	public static void main(String[] args) {
 		int izvele;
