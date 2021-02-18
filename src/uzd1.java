@@ -49,6 +49,39 @@ public class uzd1 {
 	                mi = i;
 	        return mi;
 	    }
+	  
+	  
+	    static int[][] pancakeSort(int masivs[][]){
+	    	int n = masivs.length*masivs[0].length;
+	    	int skaititajs=0;
+		    int[] arr = new int [masivs.length*masivs[0].length];
+		    for(int c=0; c<masivs.length; c++){
+				for(int b=0; b<masivs[c].length; b++){
+					arr[skaititajs] = masivs[c][b];
+					skaititajs++;
+				}
+			}
+		    
+	        for (int curr_size = n; curr_size > 1; 
+	                                 --curr_size)
+	        {
+	            int mi = findMax(arr, curr_size);
+	            if (mi != curr_size-1)
+	            {
+	                flip(arr, mi);
+	                flip(arr, curr_size-1);
+	            }
+	        }
+	        skaititajs=0;
+			for(int c=0; c<masivs.length; c++){
+				for(int b=0; b<masivs[c].length; b++){
+					masivs[c][b] = arr[skaititajs];
+					skaititajs++;
+				}
+			}
+			JOptionPane.showMessageDialog(null, "Masīvs sakārtots augoši!");
+			return masivs;
+	    }
 	
 	
 
