@@ -96,9 +96,39 @@ public class Picerija_Laugalis {
 		                JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
 		            break;
 		            }
+		            do {
+		                picasSanemsana = JOptionPane.showInputDialog("Izvelies picas saņemšanas veidu\nA - Uz vietas ceptuvē\nB - Piegāde uz norādīto adresi");
+		                picasSanemsana.toLowerCase();
+		            }while(!picasSanemsana.equals("a") && !picasSanemsana.equals("b"));
+		            switch(picasSanemsana) {
+		            case "a":
+		                picasSanemsana = "Uz vietas ceptuvē";
+		            break;
+		            case "b":
+		                picasSanemsana = "Piegāde uz norādīto adresi";
+		                cena=cena+5;
+		            break;
+		            default:
+		                JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+		            break;
+		            }
+		            JOptionPane.showMessageDialog(null, "---Klienta dati---\nVārds: "+vards+"\nUzvārds: "+uzvards+"\nTalrunis: "+talrunis+"\nAdrese: "+adrese+"\nEpasts: "+epasts+"\n---Pasūtījums---\nPicas izmērs: "+picasLielums+"\n"
+		                    + "Picas piedevas: "+picasPiedevas+"\nPicas mērcīte: "+picasMercites+"\nPicas saņemšanas veids: "+picasSanemsana+"\nCena: "+cena+"€");
 		            
-		            }  
-		            
+		            public static void saglabat(String vards, String uzvards, int talrunis, String adrese, String epasts, String picasLielums, String picasPiedevas, String picasMercites, String picasSanemsana, double cena) {
+		                try {
+		                    FileWriter fw = new FileWriter("pasutijumi.txt", true);
+		                    PrintWriter raksta = new PrintWriter(fw);
+		                    raksta.println("\n__\n---Klienta dati---\nVārds: "+vards+"\nUzvārds: "+uzvards+"\nTalrunis: "+talrunis+"\nAdrese: "+adrese+"\nEpasts: "+epasts+"\n---Pasūtījums---\nPicas izmērs: "+picasLielums+"\n"
+		                            + "Picas piedevas: "+picasPiedevas+"\nPicas mērcīte: "+picasMercites+"\nPicas saņemšanas veids: "+picasSanemsana+"\nCena: "+cena+"€");
+		                    JOptionPane.showMessageDialog(null, "Ierakstīts failā - pasutijumi.txt");
+		                    raksta.close();
+		                }catch(Exception e) {
+		                    JOptionPane.showMessageDialog(null, "Kļūme ierakstot faila!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+		                }
+		            }
+
+			 }
 		            
 			
 			             JOptionPane.showMessageDialog(null, "Programma apturēta!");
