@@ -23,6 +23,51 @@ public class Picerija_Laugalis {
 		            epasts = JOptionPane.showInputDialog("Ievadiet savu epastu: ");
 		            adrese = JOptionPane.showInputDialog("Ievadiet savu adresi (pilsēta, iela, māja, dzīvoklis): ");
 		            
+		            do {
+		                picasLielums = JOptionPane.showInputDialog("Izvelies picas lielumu\nA - 25cm\nB - 30cm\nC - 50cm ");
+		                picasLielums.toLowerCase();
+		            }while(!picasLielums.equals("a") && !picasLielums.equals("b") && !picasLielums.equals("c"));
+		            switch(picasLielums) {
+		            case "a":
+		                picasLielums = "25cm";
+		                cena=cena+5;
+		            break;
+		            case "b":
+		                picasLielums = "30cm";
+		                cena=cena+7.50;
+		            break;
+		            case "c":
+		                picasLielums = "50cm";
+		                cena=cena+10;
+		            break;
+		            default:
+		                JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+		            break;
+		            }
+		            
+		            do {
+		                picasPiedevas = JOptionPane.showInputDialog("Izvelies picas piedevas\nA - Salami desa\nB - Bekons\nC - Ananāsi\nD - Čedaras siers");
+		                picasPiedevas.toLowerCase();
+		            }while(!picasPiedevas.equals("a") && !picasPiedevas.equals("b") && !picasPiedevas.equals("c") && !picasPiedevas.equals("d"));
+		            switch(picasPiedevas) {
+		            case "a":
+		                picasPiedevas = "Salami desa";
+		            break;
+		            case "b":
+		                picasPiedevas = "Bekons";
+		            break;
+		            case "c":
+		                picasPiedevas = "Ananāsi";
+		            break;
+		            case "d":
+		                picasPiedevas = "Čedaras siers";
+		            break;
+		            default:
+		                JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+		            break;
+		            }  
+		            
+		            
 			
 			             JOptionPane.showMessageDialog(null, "Programma apturēta!");
 			         break;
