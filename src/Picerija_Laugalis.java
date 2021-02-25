@@ -1,3 +1,9 @@
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 
 public class Picerija_Laugalis {
@@ -65,6 +71,32 @@ public class Picerija_Laugalis {
 		            default:
 		                JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
 		            break;
+		            }
+		            
+		            do {
+		                picasMercites = JOptionPane.showInputDialog("Izvelies picas mercītes\nA - Kečups\nB - BBQ\nC - Ķiploku\nD - Čili");
+		                picasMercites.toLowerCase();
+		                
+		            }while(!picasMercites.equals("a") && !picasMercites.equals("b") && !picasMercites.equals("c") && !picasMercites.equals("d"));
+		            
+		            switch(picasMercites) {
+		            case "a":
+		                picasMercites = "Kečups";
+		            break;
+		            case "b":
+		                picasMercites = "BBQ";
+		            break;
+		            case "c":
+		                picasMercites = "Ķiploku";
+		            break;
+		            case "d":
+		                picasMercites = "mušmires";
+		            break;
+		            default:
+		                JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+		            break;
+		            }
+		            
 		            }  
 		            
 		            
