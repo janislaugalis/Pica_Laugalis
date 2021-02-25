@@ -7,6 +7,37 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Picerija_Laugalis {
+	public static void saglabat(String vards, String uzvards, int talrunis, String adrese, String epasts, String picasLielums, String picasPiedevas, String picasMercites, String picasSanemsana, double cena) {
+        try {
+            FileWriter fw = new FileWriter("pasutijumi.txt", true);
+            PrintWriter raksta = new PrintWriter(fw);
+            raksta.println("\n__\n---Klienta dati---\nVārds: "+vards+"\nUzvārds: "+uzvards+"\nTalrunis: "+talrunis+"\nAdrese: "+adrese+"\nEpasts: "+epasts+"\n---Pasūtījums---\nPicas izmērs: "+picasLielums+"\n"
+                    + "Picas piedevas: "+picasPiedevas+"\nPicas mērcīte: "+picasMercites+"\nPicas saņemšanas veids: "+picasSanemsana+"\nCena: "+cena+"€");
+            JOptionPane.showMessageDialog(null, "Ierakstīts failā - pasutijumi.txt");
+            raksta.close();
+        }catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "Kļūme ierakstot faila!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+	
+	public static void nolasit() {
+        try{
+            String masivsVirkne="";
+            FileReader fails = new FileReader("pasutijumi.txt");
+            Scanner myReader = new Scanner(fails);
+            while (myReader.hasNextLine()) {
+              String data = myReader.nextLine();
+              masivsVirkne=masivsVirkne+data+"\n";
+            }
+            myReader.close();
+            JOptionPane.showMessageDialog(null, masivsVirkne);
+        }
+        catch (IOException errorMessage){
+            JOptionPane.showMessageDialog(null, "Failu nevar atrast! No sākuma izveido pasūtījumus");
+        }
+}
+
+
 
 	public static void main(String[] args) {
 		int izvele;
@@ -114,22 +145,11 @@ public class Picerija_Laugalis {
 		            }
 		            JOptionPane.showMessageDialog(null, "---Klienta dati---\nVārds: "+vards+"\nUzvārds: "+uzvards+"\nTalrunis: "+talrunis+"\nAdrese: "+adrese+"\nEpasts: "+epasts+"\n---Pasūtījums---\nPicas izmērs: "+picasLielums+"\n"
 		                    + "Picas piedevas: "+picasPiedevas+"\nPicas mērcīte: "+picasMercites+"\nPicas saņemšanas veids: "+picasSanemsana+"\nCena: "+cena+"€");
+		            saglabat(vards, uzvards, talrunis, adrese, epasts, picasLielums, picasPiedevas, picasMercites, picasSanemsana, cena);
 		            
 		            
-		            
-		            public static void saglabat(String vards, String uzvards, int talrunis, String adrese, String epasts, String picasLielums, String picasPiedevas, String picasMercites, String picasSanemsana, double cena) {
-		                try {
-		                    FileWriter fw = new FileWriter("pasutijumi.txt", true);
-		                    PrintWriter raksta = new PrintWriter(fw);
-		                    raksta.println("\n__\n---Klienta dati---\nVārds: "+vards+"\nUzvārds: "+uzvards+"\nTalrunis: "+talrunis+"\nAdrese: "+adrese+"\nEpasts: "+epasts+"\n---Pasūtījums---\nPicas izmērs: "+picasLielums+"\n"
-		                            + "Picas piedevas: "+picasPiedevas+"\nPicas mērcīte: "+picasMercites+"\nPicas saņemšanas veids: "+picasSanemsana+"\nCena: "+cena+"€");
-		                    JOptionPane.showMessageDialog(null, "Ierakstīts failā - pasutijumi.txt");
-		                    raksta.close();
-		                }catch(Exception e) {
-		                    JOptionPane.showMessageDialog(null, "Kļūme ierakstot faila!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
-		                }
-		            }
-
+		           
+		           
 			 }
 		            
 			
