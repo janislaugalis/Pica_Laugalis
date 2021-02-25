@@ -115,6 +115,8 @@ public class Picerija_Laugalis {
 		            JOptionPane.showMessageDialog(null, "---Klienta dati---\nVārds: "+vards+"\nUzvārds: "+uzvards+"\nTalrunis: "+talrunis+"\nAdrese: "+adrese+"\nEpasts: "+epasts+"\n---Pasūtījums---\nPicas izmērs: "+picasLielums+"\n"
 		                    + "Picas piedevas: "+picasPiedevas+"\nPicas mērcīte: "+picasMercites+"\nPicas saņemšanas veids: "+picasSanemsana+"\nCena: "+cena+"€");
 		            
+		            
+		            
 		            public static void saglabat(String vards, String uzvards, int talrunis, String adrese, String epasts, String picasLielums, String picasPiedevas, String picasMercites, String picasSanemsana, double cena) {
 		                try {
 		                    FileWriter fw = new FileWriter("pasutijumi.txt", true);
