@@ -158,7 +158,10 @@ public class Picerija_Laugalis {
 			         default:
 			             JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
 			         break;
-			 }
+			         case 2:
+			             nolasit();
+			         break; 
+			 
 			         }while(izvele!=0);
 
 	}
