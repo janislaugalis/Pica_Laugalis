@@ -104,66 +104,86 @@ public class Picerija_Laugalis {
 		            break;
 		            }
 		            
-		            do {
-		                picasMercites = JOptionPane.showInputDialog("Izvelies picas mercītes\nA - Kečups\nB - BBQ\nC - Ķiploku\nD - Čili");
-		                picasMercites.toLowerCase();
-		                
-		            }while(!picasMercites.equals("a") && !picasMercites.equals("b") && !picasMercites.equals("c") && !picasMercites.equals("d"));
-		            
-		            switch(picasMercites) {
-		            case "a":
-		                picasMercites = "Kečups";
-		            break;
-		            case "b":
-		                picasMercites = "BBQ";
-		            break;
-		            case "c":
-		                picasMercites = "Ķiploku";
-		            break;
-		            case "d":
-		                picasMercites = "mušmires";
-		            break;
-		            default:
-		                JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
-		            break;
-		            }
-		            do {
-		                picasSanemsana = JOptionPane.showInputDialog("Izvelies picas saņemšanas veidu\nA - Uz vietas ceptuvē\nB - Piegāde uz norādīto adresi");
-		                picasSanemsana.toLowerCase();
-		            }while(!picasSanemsana.equals("a") && !picasSanemsana.equals("b"));
-		            switch(picasSanemsana) {
-		            case "a":
-		                picasSanemsana = "Uz vietas ceptuvē";
-		            break;
-		            case "b":
-		                picasSanemsana = "Piegāde uz norādīto adresi";
-		                cena=cena+5;
-		            break;
-		            default:
-		                JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
-		            break;
-		            }
-		            JOptionPane.showMessageDialog(null, "---Klienta dati---\nVārds: "+vards+"\nUzvārds: "+uzvards+"\nTalrunis: "+talrunis+"\nAdrese: "+adrese+"\nEpasts: "+epasts+"\n---Pasūtījums---\nPicas izmērs: "+picasLielums+"\n"
-		                    + "Picas piedevas: "+picasPiedevas+"\nPicas mērcīte: "+picasMercites+"\nPicas saņemšanas veids: "+picasSanemsana+"\nCena: "+cena+"€");
-		            saglabat(vards, uzvards, talrunis, adrese, epasts, picasLielums, picasPiedevas, picasMercites, picasSanemsana, cena);
-		            
-		            
-		           
-		           
-			 }
-		            
-			
-			             JOptionPane.showMessageDialog(null, "Programma apturēta!");
-			         break;
-			         default:
-			             JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
-			         break;
-			         case 2:
-			             nolasit();
-			         break; 
-			 
-			         }while(izvele!=0);
-
-	}
-
+		    		do {
+		    			picasPiedevas = JOptionPane.showInputDialog("Izvelies picas piedevas\nA - Salami desa\nB - Bekons\nC - Ananāsi\nD - Čedaras siers");
+		    			picasPiedevas.toLowerCase();
+		    		}while(!picasPiedevas.equals("a") && !picasPiedevas.equals("b") && !picasPiedevas.equals("c") && !picasPiedevas.equals("d"));
+		    		switch(picasPiedevas) {
+		    		case "a":
+		    			picasPiedevas = "Salami desa";
+		    		break;
+		    		case "b":
+		    			picasPiedevas = "Bekons";
+		    		break;
+		    		case "c":
+		    			picasPiedevas = "Ananāsi";
+		    		break;
+		    		case "d":
+		    			picasPiedevas = "Čedaras siers";
+		    		break;
+		    		default:
+		    			JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+		    		break;
+		    		}
+		    		
+		    		do {
+		    			picasMercites = JOptionPane.showInputDialog("Izvelies picas mercītes\nA - Kečups\nB - BBQ\nC - Ķiploku\nD - Čili");
+		    			picasMercites.toLowerCase();
+		    		}while(!picasMercites.equals("a") && !picasMercites.equals("b") && !picasMercites.equals("c") && !picasMercites.equals("d"));
+		    		switch(picasMercites) {
+		    		case "a":
+		    			picasMercites = "Kečups";
+		    		break;
+		    		case "b":
+		    			picasMercites = "BBQ";
+		    		break;
+		    		case "c":
+		    			picasMercites = "Ķiploku";
+		    		break;
+		    		case "d":
+		    			picasMercites = "Čili";
+		    		break;
+		    		default:
+		    			JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+		    		break;
+		    		}
+		    		
+		    		do {
+		    			picasSanemsana = JOptionPane.showInputDialog("Izvelies picas saņemšanas veidu\nA - Uz vietas ceptuvē\nB - Piegāde uz norādīto adresi");
+		    			picasSanemsana.toLowerCase();
+		    		}while(!picasSanemsana.equals("a") && !picasSanemsana.equals("b"));
+		    		switch(picasSanemsana) {
+		    		case "a":
+		    			picasSanemsana = "Uz vietas ceptuvē";
+		    		break;
+		    		case "b":
+		    			picasSanemsana = "Piegāde uz norādīto adresi";
+		    			cena=cena+5;
+		    		break;
+		    		default:
+		    			JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+		    		break;
+		    		}
+		    		
+		    		
+		    		
+		    		
+		    		JOptionPane.showMessageDialog(null, "---Klienta dati---\nVārds: "+vards+"\nUzvārds: "+uzvards+"\nTalrunis: "+talrunis+"\nAdrese: "+adrese+"\nEpasts: "+epasts+"\n---Pasūtījums---\nPicas izmērs: "+picasLielums+"\n"
+		    				+ "Picas piedevas: "+picasPiedevas+"\nPicas mērcīte: "+picasMercites+"\nPicas saņemšanas veids: "+picasSanemsana+"\nCena: "+cena+"€");
+		    		
+		    		saglabat(vards, uzvards, talrunis, adrese, epasts, picasLielums, picasPiedevas, picasMercites, picasSanemsana, cena);
+		    		break;
+		    		case 2:
+		    			nolasit();
+		    		break;
+		    		case 0:
+		    			JOptionPane.showMessageDialog(null, "Programma apturēta!");		
+		    		break;
+		    		default:
+		    			JOptionPane.showMessageDialog(null, "Šāda darbība nepastāv!", "Kļūme!", JOptionPane.ERROR_MESSAGE);
+		    		break;
+		    		}
+		    		}while(izvele!=0);
+		    	}
 }
+		    
