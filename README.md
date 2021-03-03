@@ -9,4 +9,4 @@
 
 - [x] Picērijas izveidošana
 - [x] Picērijas izgrūšana uz GitHub
-- [ ] Lieku zaru izdzešana
+- [x] Lieku zaru izdzešana, atk�rt�ju izgr�sts uz GitHub

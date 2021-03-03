@@ -33,7 +33,7 @@ public class Picerija_Laugalis {
             JOptionPane.showMessageDialog(null, masivsVirkne);
         }
         catch (IOException errorMessage){
-            JOptionPane.showMessageDialog(null, "Failu nevar atrast! No sākuma izveido pasūtījumus");
+            JOptionPane.showMessageDialog(null, "Failu nevar atrast! No sākuma izveido pasūtījumus!");
         }
 }
 
